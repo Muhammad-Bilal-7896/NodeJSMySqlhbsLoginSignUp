@@ -6,8 +6,16 @@ const app = express();
 const db = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'root',
-    database:'http://localhost/phpmyadmin/'
+    password:'',
+    database:'nodejs_login'
+})
+
+db.connect((error)=>{
+    if(error){
+        console.log(error);
+    }else{
+        console.log("MYSQL Connected...");
+    }
 })
 
 app.get("/",(req,res)=>{
