@@ -28,15 +28,8 @@ db.connect((error)=>{
     }
 })
 
-app.get("/",(req,res)=>{
-    //res.send("<h1>Home Page</h1>");
-    res.render("index")
-})
-
-app.get("/register",(req,res)=>{
-    //res.send("<h1>Home Page</h1>");
-    res.render("register")
-})
+//Defining Routes
+app.use('/',require('./routes/pages'));
 
 app.listen(5000,()=>{
     console.log("Server started on Port 5000");
